@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI AdCreator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-ad"></i>
+                    <span>AI AdCreator</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Akash Vimal</span>
+                    </div>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Welcome back, Akash!</h1>
+                    <p>Here's what's happening with your ad campaigns today</p>
+                </div>
+                <a href="create-ad.html" class="btn-primary">
+                    <i class="fas fa-plus"></i> Create New Ad
+                </a>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>128</h3>
+                        <p>Total Ads Created</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12% this month
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>45.2K</h3>
+                        <p>Total Impressions</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 23% this month
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3.8%</h3>
+                        <p>Avg Click Rate</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 0.4% this month
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>$12.5K</h3>
+                        <p>Revenue Generated</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 18% this month
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Ads -->
+            <div class="dashboard-section-content">
+                <div class="section-title">
+                    <h2>Recent Ads</h2>
+                    <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="ads-grid">
+                    <div class="ad-card">
+                        <div class="ad-card-image">
+                            <img src="assets/images/ad-template-1.jpg" alt="Ad 1">
+                            <div class="ad-card-status active">Active</div>
+                        </div>
+                        <div class="ad-card-content">
+                            <h4>Summer Sale Campaign</h4>
+                            <p>Facebook • Created 2 days ago</p>
+                            <div class="ad-card-stats">
+                                <span><i class="fas fa-eye"></i> 12.5K</span>
+                                <span><i class="fas fa-mouse-pointer"></i> 4.2%</span>
+                                <span><i class="fas fa-dollar-sign"></i> $850</span>
+                            </div>
+                            <div class="ad-card-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon"><i class="fas fa-chart-line"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ad-card">
+                        <div class="ad-card-image">
+                            <img src="assets/images/ad-template-2.png" alt="Ad 2">
+                            <div class="ad-card-status active">Active</div>
+                        </div>
+                        <div class="ad-card-content">
+                            <h4>New Product Launch</h4>
+                            <p>Instagram • Created 5 days ago</p>
+                            <div class="ad-card-stats">
+                                <span><i class="fas fa-eye"></i> 8.3K</span>
+                                <span><i class="fas fa-mouse-pointer"></i> 3.8%</span>
+                                <span><i class="fas fa-dollar-sign"></i> $620</span>
+                            </div>
+                            <div class="ad-card-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon"><i class="fas fa-chart-line"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ad-card">
+                        <div class="ad-card-image">
+                            <img src="assets/images/ad-template-3.webp" alt="Ad 3">
+                            <div class="ad-card-status paused">Paused</div>
+                        </div>
+                        <div class="ad-card-content">
+                            <h4>Holiday Special Offer</h4>
+                            <p>Google • Created 1 week ago</p>
+                            <div class="ad-card-stats">
+                                <span><i class="fas fa-eye"></i> 15.7K</span>
+                                <span><i class="fas fa-mouse-pointer"></i> 5.1%</span>
+                                <span><i class="fas fa-dollar-sign"></i> $1.2K</span>
+                            </div>
+                            <div class="ad-card-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon"><i class="fas fa-chart-line"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Chart -->
+            <div class="dashboard-section-content">
+                <div class="section-title">
+                    <h2>Performance Overview</h2>
+                    <div class="chart-filters">
+                        <button class="filter-btn active">7 Days</button>
+                        <button class="filter-btn">30 Days</button>
+                        <button class="filter-btn">90 Days</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-ad"></i>
+                        <span>AI AdCreator</span>
+                    </div>
+                    <p>Create personalized, high-converting ads with the power of artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="terms.html">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI AdCreator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/analytics.js"></script>
+
+    <!-- Feature Scripts -->
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
+    <script src="assets/js/sw.js"></script>
+</body>
+</html>

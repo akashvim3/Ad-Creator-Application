@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - AI AdCreator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-ad"></i>
+                    <span>AI AdCreator</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="analytics.html" class="active">Analytics</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Akash Vimal</span>
+                    </div>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="analytics-section">
+        <div class="container">
+            <div class="analytics-header">
+                <div>
+                    <h1>Performance Analytics</h1>
+                    <p>Track your ad performance and optimize for better results</p>
+                </div>
+                <div class="date-range-selector">
+                    <button class="filter-btn active">Last 7 Days</button>
+                    <button class="filter-btn">Last 30 Days</button>
+                    <button class="filter-btn">Last 90 Days</button>
+                    <button class="filter-btn">Custom Range</button>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-label">Total Impressions</span>
+                        <i class="fas fa-eye metric-icon"></i>
+                    </div>
+                    <h2 class="metric-value">145.2K</h2>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>23.5% vs last period</span>
+                    </div>
+                    <div class="metric-chart">
+                        <canvas id="impressionsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-label">Click-Through Rate</span>
+                        <i class="fas fa-mouse-pointer metric-icon"></i>
+                    </div>
+                    <h2 class="metric-value">4.2%</h2>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>0.8% vs last period</span>
+                    </div>
+                    <div class="metric-chart">
+                        <canvas id="ctrChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-label">Conversions</span>
+                        <i class="fas fa-check-circle metric-icon"></i>
+                    </div>
+                    <h2 class="metric-value">1,847</h2>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>18.3% vs last period</span>
+                    </div>
+                    <div class="metric-chart">
+                        <canvas id="conversionsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-label">Cost Per Click</span>
+                        <i class="fas fa-dollar-sign metric-icon"></i>
+                    </div>
+                    <h2 class="metric-value">$0.45</h2>
+                    <div class="metric-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>12.5% vs last period</span>
+                    </div>
+                    <div class="metric-chart">
+                        <canvas id="cpcChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Chart -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Performance Trends</h3>
+                    <div class="chart-legend">
+                        <span><span class="legend-color" style="background: #667eea;"></span> Impressions</span>
+                        <span><span class="legend-color" style="background: #43e97b;"></span> Clicks</span>
+                        <span><span class="legend-color" style="background: #f093fb;"></span> Conversions</span>
+                    </div>
+                </div>
+                <div class="chart-container-large">
+                    <canvas id="performanceTrendsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="analytics-grid">
+                <!-- Top Performing Ads -->
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <h3>Top Performing Ads</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="performance-list">
+                        <div class="performance-item">
+                            <div class="performance-rank">1</div>
+                            <div class="performance-details">
+                                <h4>Summer Sale Campaign</h4>
+                                <p>Facebook • Active</p>
+                            </div>
+                            <div class="performance-stats">
+                                <span class="stat-value">6.8%</span>
+                                <span class="stat-label">CTR</span>
+                            </div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-rank">2</div>
+                            <div class="performance-details">
+                                <h4>New Product Launch</h4>
+                                <p>Instagram • Active</p>
+                            </div>
+                            <div class="performance-stats">
+                                <span class="stat-value">5.4%</span>
+                                <span class="stat-label">CTR</span>
+                            </div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-rank">3</div>
+                            <div class="performance-details">
+                                <h4>Holiday Special Offer</h4>
+                                <p>Google • Paused</p>
+                            </div>
+                            <div class="performance-stats">
+                                <span class="stat-value">4.9%</span>
+                                <span class="stat-label">CTR</span>
+                            </div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-rank">4</div>
+                            <div class="performance-details">
+                                <h4>Back to School Sale</h4>
+                                <p>Facebook • Active</p>
+                            </div>
+                            <div class="performance-stats">
+                                <span class="stat-value">4.2%</span>
+                                <span class="stat-label">CTR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platform Performance -->
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <h3>Platform Performance</h3>
+                    </div>
+                    <div class="platform-performance">
+                        <div class="platform-item">
+                            <div class="platform-header">
+                                <i class="fab fa-facebook platform-icon facebook"></i>
+                                <span>Facebook</span>
+                            </div>
+                            <div class="platform-metrics">
+                                <div class="platform-metric">
+                                    <span class="metric-label">Impressions</span>
+                                    <span class="metric-value">62.5K</span>
+                                </div>
+                                <div class="platform-metric">
+                                    <span class="metric-label">CTR</span>
+                                    <span class="metric-value">4.8%</span>
+                                </div>
+                                <div class="platform-metric">
+                                    <span class="metric-label">Conversions</span>
+                                    <span class="metric-value">842</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="platform-item">
+                            <div class="platform-header">
+                                <i class="fab fa-instagram platform-icon instagram"></i>
+                                <span>Instagram</span>
+                            </div>
+                            <div class="platform-metrics">
+                                <div class="platform-metric">
+                                    <span class="metric-label">Impressions</span>
+                                    <span class="metric-value">48.3K</span>
+                                </div>
+                                <div class="platform-metric">
+                                    <span class="metric-label">CTR</span>
+                                    <span class="metric-value">3.9%</span>
+                                </div>
+                                <div class="platform-metric">
+                                    <span class="metric-label">Conversions</span>
+                                    <span class="metric-value">612</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="platform-item">
+                            <div class="platform-header">
+                                <i class="fab fa-google platform-icon google"></i>
+                                <span>Google Ads</span>
+                            </div>
+                            <div class="platform-metrics">
+                                <div class="platform-metric">
+                                    <span class="metric-label">Impressions</span>
+                                    <span class="metric-value">34.4K</span>
+                                </div>
+                                <div class="platform-metric">
+                                    <span class="metric-label">CTR</span>
+                                    <span class="metric-value">5.2%</span>
+                                </div>
+                                <div class="platform-metric">
+                                    <span class="metric-label">Conversions</span>
+                                    <span class="metric-value">393</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audience Insights -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Audience Insights</h3>
+                </div>
+                <div class="audience-grid">
+                    <div class="audience-segment">
+                        <h4>Age Distribution</h4>
+                        <div class="audience-chart">
+                            <canvas id="ageChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="audience-segment">
+                        <h4>Gender Distribution</h4>
+                        <div class="audience-chart">
+                            <canvas id="genderChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="audience-segment">
+                        <h4>Top Locations</h4>
+                        <div class="location-list">
+                            <div class="location-item">
+                                <span>United States</span>
+                                <div class="location-bar">
+                                    <div class="bar-fill" style="width: 85%;"></div>
+                                </div>
+                                <span class="location-percentage">45%</span>
+                            </div>
+                            <div class="location-item">
+                                <span>United Kingdom</span>
+                                <div class="location-bar">
+                                    <div class="bar-fill" style="width: 60%;"></div>
+                                </div>
+                                <span class="location-percentage">22%</span>
+                            </div>
+                            <div class="location-item">
+                                <span>Canada</span>
+                                <div class="location-bar">
+                                    <div class="bar-fill" style="width: 45%;"></div>
+                                </div>
+                                <span class="location-percentage">15%</span>
+                            </div>
+                            <div class="location-item">
+                                <span>Australia</span>
+                                <div class="location-bar">
+                                    <div class="bar-fill" style="width: 35%;"></div>
+                                </div>
+                                <span class="location-percentage">11%</span>
+                            </div>
+                            <div class="location-item">
+                                <span>Germany</span>
+                                <div class="location-bar">
+                                    <div class="bar-fill" style="width: 25%;"></div>
+                                </div>
+                                <span class="location-percentage">7%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Recommendations -->
+            <div class="analytics-card recommendations-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-lightbulb"></i> AI-Powered Recommendations</h3>
+                </div>
+                <div class="recommendations-grid">
+                    <div class="recommendation-item">
+                        <div class="recommendation-icon" style="background: var(--gradient-1);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <h4>Optimal Posting Time</h4>
+                            <p>Your audience is most active between 2 PM - 5 PM EST. Schedule ads during this window for 35% higher engagement.</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommendation-icon" style="background: var(--gradient-2);">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <h4>Audience Targeting</h4>
+                            <p>Expand your targeting to include "fitness enthusiasts" segment. Similar campaigns saw 28% increase in conversions.</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommendation-icon" style="background: var(--gradient-3);">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <h4>Creative Optimization</h4>
+                            <p>Ads with blue and green color schemes perform 42% better with your audience. Consider updating your visuals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-ad"></i>
+                        <span>AI AdCreator</span>
+                    </div>
+                    <p>Create personalized, high-converting ads with the power of artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="terms.html">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI AdCreator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/analytics.js"></script>
+
+    <!-- Feature Scripts -->
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
+    <script src="assets/js/sw.js"></script>
+</body>
+</html>

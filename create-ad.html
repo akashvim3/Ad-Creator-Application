@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ad - AI AdCreator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-ad"></i>
+                    <span>AI AdCreator</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Akash Vimal</span>
+                    </div>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create Ad Section -->
+    <section class="create-ad-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>Create Personalized Ad</h1>
+                <p>Define your target customer and let AI generate the perfect ad</p>
+            </div>
+
+            <div class="create-ad-layout">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <div class="panel-card">
+                        <h3><i class="fas fa-user"></i> Customer Profile</h3>
+                        <form id="customerProfileForm">
+                            <div class="form-group">
+                                <label>Target Audience</label>
+                                <label for="targetAudience"></label><input type="text" id="targetAudience" placeholder="e.g., Young professionals, 25-35 years old">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Age Range</label>
+                                    <label for="ageRange"></label><select id="ageRange">
+                                        <option value="18-24">18-24</option>
+                                        <option value="25-34">25-34</option>
+                                        <option value="35-44">35-44</option>
+                                        <option value="45-54">45-54</option>
+                                        <option value="55+">55+</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <label for="gender"></label><select id="gender">
+                                        <option value="all">All</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Interests</label>
+                                <label for="interests"></label><input type="text" id="interests" placeholder="e.g., Technology, Fitness, Travel">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Pain Points</label>
+                                <label for="painPoints"></label><textarea id="painPoints" rows="3" placeholder="What problems does your product solve?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Product/Service</label>
+                                <label for="productService"></label><input type="text" id="productService" placeholder="e.g., Fitness tracking app">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Key Benefits</label>
+                                <label for="keyBenefits"></label><textarea id="keyBenefits" rows="3" placeholder="Main benefits of your product"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Call to Action</label>
+                                <label for="ctaType"></label><select id="ctaType">
+                                    <option value="buy">Buy Now</option>
+                                    <option value="learn">Learn More</option>
+                                    <option value="signup">Sign Up</option>
+                                    <option value="download">Download</option>
+                                    <option value="contact">Contact Us</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ad Platform</label>
+                                <div class="platform-select">
+                                    <label class="platform-option">
+                                        <input type="checkbox" name="platform" value="facebook" checked>
+                                        <span><i class="fab fa-facebook"></i> Facebook</span>
+                                    </label>
+                                    <label class="platform-option">
+                                        <input type="checkbox" name="platform" value="instagram">
+                                        <span><i class="fab fa-instagram"></i> Instagram</span>
+                                    </label>
+                                    <label class="platform-option">
+                                        <input type="checkbox" name="platform" value="google">
+                                        <span><i class="fab fa-google"></i> Google</span>
+                                    </label>
+                                    <label class="platform-option">
+                                        <input type="checkbox" name="platform" value="linkedin">
+                                        <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tone</label>
+                                <label for="tone"></label><select id="tone">
+                                    <option value="professional">Professional</option>
+                                    <option value="casual">Casual</option>
+                                    <option value="enthusiastic">Enthusiastic</option>
+                                    <option value="urgent">Urgent</option>
+                                    <option value="friendly">Friendly</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <button class="btn-primary btn-large btn-generate" id="generateAdBtn">
+                        <i class="fas fa-magic"></i> Generate Ad
+                    </button>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="preview-panel">
+                    <div class="panel-card">
+                        <div class="preview-header">
+                            <h3><i class="fas fa-eye"></i> Ad Preview</h3>
+                            <div class="preview-controls">
+                                <button class="btn-icon" id="refreshAd" title="Regenerate">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button class="btn-icon" id="downloadAd" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ad-preview-container" id="adPreviewContainer">
+                            <div class="preview-placeholder">
+                                <i class="fas fa-ad"></i>
+                                <p>Your generated ad will appear here</p>
+                                <span>Fill in the customer profile and click "Generate Ad"</span>
+                            </div>
+                        </div>
+
+                        <!-- Ad Copy Display -->
+                        <div class="ad-copy-section" id="adCopySection" style="display: none;">
+                            <h4>Ad Copy</h4>
+                            <div class="copy-variants">
+                                <div class="copy-variant" id="headline">
+                                    <label>Headline</label>
+                                    <p id="headlineText"></p>
+                                    <button class="btn-copy" onclick="copyText('headlineText')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="copy-variant" id="description">
+                                    <label>Description</label>
+                                    <p id="descriptionText"></p>
+                                    <button class="btn-copy" onclick="copyText('descriptionText')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="copy-variant" id="cta">
+                                    <label>Call to Action</label>
+                                    <p id="ctaText"></p>
+                                    <button class="btn-copy" onclick="copyText('ctaText')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Insights -->
+                        <div class="ai-insights" id="aiInsights" style="display: none;">
+                            <h4><i class="fas fa-lightbulb"></i> AI Insights</h4>
+                            <div class="insight-cards">
+                                <div class="insight-card">
+                                    <span class="insight-label">Engagement Score</span>
+                                    <span class="insight-value" id="engagementScore">-</span>
+                                </div>
+                                <div class="insight-card">
+                                    <span class="insight-label">Readability</span>
+                                    <span class="insight-value" id="readability">-</span>
+                                </div>
+                                <div class="insight-card">
+                                    <span class="insight-label">Emotional Appeal</span>
+                                    <span class="insight-value" id="emotionalAppeal">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Export Options -->
+                        <div class="export-options" id="exportOptions" style="display: none;">
+                            <h4>Export Options</h4>
+                            <div class="export-buttons">
+                                <button class="btn-export" onclick="exportAd('png')">
+                                    <i class="fas fa-file-image"></i> PNG
+                                </button>
+                                <button class="btn-export" onclick="exportAd('jpg')">
+                                    <i class="fas fa-image"></i> JPG
+                                </button>
+                                <button class="btn-export" onclick="exportAd('pdf')">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </button>
+                                <button class="btn-export" onclick="exportAd('json')">
+                                    <i class="fas fa-file-code"></i> JSON
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loader"></div>
+            <p>Generating your personalized ad...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-ad"></i>
+                        <span>AI AdCreator</span>
+                    </div>
+                    <p>Create personalized, high-converting ads with the power of artificial intelligence.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI AdCreator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ad-generator.js"></script>
+
+    <!-- Feature Scripts -->
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
+    <script src="assets/js/sw.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI AdCreator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-ad"></i>
+                    <span>AI AdCreator</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-content">
+                <div class="auth-left">
+                    <div class="auth-form-container">
+                        <div class="auth-header">
+                            <h1>Welcome Back</h1>
+                            <p>Sign in to your AI AdCreator account</p>
+                        </div>
+
+                        <form id="loginForm" class="auth-form">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <label for="loginEmail"></label><input type="email" id="loginEmail" required placeholder="you@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password</label>
+                                <div class="password-input">
+                                    <label for="loginPassword"></label><input type="password" id="loginPassword" required placeholder="Enter your password">
+                                    <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="rememberMe">
+                                    <span>Remember me</span>
+                                </label>
+                                <a href="#" class="forgot-password">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-large btn-full">
+                                Sign In
+                            </button>
+                        </form>
+
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+
+                        <div class="social-auth">
+                            <button class="social-btn google">
+                                <i class="fab fa-google"></i>
+                                Google
+                            </button>
+                            <button class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </button>
+                            <button class="social-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                                LinkedIn
+                            </button>
+                        </div>
+
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="signup.html">Sign up for free</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-right">
+                    <div class="auth-visual">
+                        <div class="visual-content">
+                            <h2>Start Creating Amazing Ads Today</h2>
+                            <ul class="benefits-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>AI-powered ad generation in seconds</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Professional templates for all platforms</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Advanced analytics and insights</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Unlimited customization options</span>
+                                </li>
+                            </ul>
+                            <div class="testimonial-mini">
+                                <div class="stars">★★★★★</div>
+                                <p>"AI AdCreator transformed our marketing workflow completely!"</p>
+                                <span>— Sarah M., Marketing Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
