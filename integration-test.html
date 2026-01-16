@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Test - AI AdCreator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+        .test-result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+        .success {
+            background: rgba(67, 233, 123, 0.2);
+            border: 1px solid #43e97b;
+            color: #43e97b;
+        }
+        .error {
+            background: rgba(245, 87, 108, 0.2);
+            border: 1px solid #f5576c;
+            color: #f5576c;
+        }
+        .info {
+            background: rgba(79, 172, 254, 0.2);
+            border: 1px solid #4facfe;
+            color: #4facfe;
+        }
+        .test-btn {
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background: var(--gradient-1);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-ad"></i>
+                    <span>AI AdCreator</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-secondary">Login</a>
+                    <a href="signup.html" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="test-container">
+        <h1>🚀 Frontend-Backend Integration Test</h1>
+        <p>Test all integrated API functionality here</p>
+
+        <!-- API Health Check -->
+        <div class="test-section">
+            <h3><i class="fas fa-heartbeat"></i> API Health Check</h3>
+            <button class="test-btn" onclick="testApiHealth()">Test API Connection</button>
+            <div id="healthResult" class="test-result info">Click button to test API health</div>
+        </div>
+
+        <!-- Authentication Tests -->
+        <div class="test-section">
+            <h3><i class="fas fa-user-lock"></i> Authentication Tests</h3>
+            
+            <h4>Login Test:</h4>
+            <button class="test-btn" onclick="testLogin()">Test Login</button>
+            <div id="loginResult" class="test-result info">Click button to test login</div>
+            
+            <h4>Signup Test:</h4>
+            <button class="test-btn" onclick="testSignup()">Test Signup</button>
+            <div id="signupResult" class="test-result info">Click button to test signup</div>
+            
+            <h4>Profile Test:</h4>
+            <button class="test-btn" onclick="testProfile()">Test Get Profile</button>
+            <div id="profileResult" class="test-result info">Requires login first</div>
+        </div>
+
+        <!-- Current Auth State -->
+        <div class="test-section">
+            <h3><i class="fas fa-info-circle"></i> Current Authentication State</h3>
+            <button class="test-btn" onclick="checkAuthState()">Check Auth State</button>
+            <div id="authStateResult" class="test-result info">Click to check current auth status</div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="test-section">
+            <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+            <button class="test-btn" onclick="clearAuth()">Clear Authentication</button>
+            <button class="test-btn" onclick="goToLogin()">Go to Login Page</button>
+            <button class="test-btn" onclick="goToSignup()">Go to Signup Page</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/api-config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    
+    <script>
+        // Test Functions
+        async function testApiHealth() {
+            const resultDiv = document.getElementById('healthResult');
+            try {
+                const isHealthy = await checkApiHealth();
+                if (isHealthy) {
+                    resultDiv.className = 'test-result success';
+                    resultDiv.innerHTML = '✅ API Connection Successful - Backend is running!';
+                } else {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.innerHTML = '❌ API Connection Failed - Check if backend is running';
+                }
+            } catch (error) {
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Error: ${error.message}`;
+            }
+        }
+
+        async function testLogin() {
+            const resultDiv = document.getElementById('loginResult');
+            try {
+                resultDiv.className = 'test-result info';
+                resultDiv.innerHTML = '🔄 Attempting login...';
+                
+                const response = await api.login({
+                    email: 'test@example.com',
+                    password: 'password123'
+                });
+                
+                resultDiv.className = 'test-result success';
+                resultDiv.innerHTML = `✅ Login Successful!<br>User: ${response.user.firstName} ${response.user.lastName}<br>Email: ${response.user.email}`;
+            } catch (error) {
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Login Failed: ${error.message}`;
+            }
+        }
+
+        async function testSignup() {
+            const resultDiv = document.getElementById('signupResult');
+            try {
+                resultDiv.className = 'test-result info';
+                resultDiv.innerHTML = '🔄 Attempting signup...';
+                
+                const timestamp = Date.now();
+                const response = await api.signup({
+                    firstName: 'Test',
+                    lastName: 'User',
+                    email: `test${timestamp}@example.com`,
+                    password: 'password123',
+                    company: 'Test Company'
+                });
+                
+                resultDiv.className = 'test-result success';
+                resultDiv.innerHTML = `✅ Signup Successful!<br>User: ${response.user.firstName} ${response.user.lastName}<br>Email: ${response.user.email}`;
+            } catch (error) {
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Signup Failed: ${error.message}`;
+            }
+        }
+
+        async function testProfile() {
+            const resultDiv = document.getElementById('profileResult');
+            try {
+                if (!api.isAuthenticated()) {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.innerHTML = '❌ Not authenticated - Please login first';
+                    return;
+                }
+                
+                resultDiv.className = 'test-result info';
+                resultDiv.innerHTML = '🔄 Fetching profile...';
+                
+                const response = await api.getProfile();
+                
+                resultDiv.className = 'test-result success';
+                resultDiv.innerHTML = `✅ Profile Retrieved!<br>Name: ${response.user.firstName} ${response.user.lastName}<br>Company: ${response.user.company}<br>Ads Created: ${response.user.stats.adsCreated}`;
+            } catch (error) {
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Profile Fetch Failed: ${error.message}`;
+            }
+        }
+
+        function checkAuthState() {
+            const resultDiv = document.getElementById('authStateResult');
+            const isAuthenticated = api.isAuthenticated();
+            const currentUser = window.currentUser;
+            
+            if (isAuthenticated && currentUser) {
+                resultDiv.className = 'test-result success';
+                resultDiv.innerHTML = `✅ Authenticated<br>User: ${currentUser.firstName} ${currentUser.lastName}<br>Email: ${currentUser.email}<br>Token: ${api.token ? 'Present' : 'Missing'}`;
+            } else {
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = '❌ Not Authenticated<br>No valid session found';
+            }
+        }
+
+        function clearAuth() {
+            api.clearAuth();
+            notify.success('Authentication cleared!');
+            checkAuthState();
+        }
+
+        function goToLogin() {
+            window.location.href = 'login.html';
+        }
+
+        function goToSignup() {
+            window.location.href = 'signup.html';
+        }
+
+        // Auto-run health check on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                testApiHealth();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

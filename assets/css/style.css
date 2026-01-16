@@ -4721,13 +4721,302 @@ body {
     margin: 0 2px;
 }
 
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet Styles (768px and below) */
 @media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: var(--card-bg);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 30px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        border-left: 1px solid var(--border-color);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    /* Hero Section */
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    /* Steps Container */
+    .steps-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .step-arrow {
+        transform: rotate(90deg);
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    /* Auth Forms */
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-right {
+        display: none;
+    }
+    
+    /* Dashboard */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Create Ad Layout */
+    .create-ad-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    /* Pricing Cards */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* Contact Form */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    /* Templates Grid */
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Analytics */
+    .analytics-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    /* Search Modal */
     .search-modal {
         padding: 60px 16px 16px;
     }
-
+    
     .search-shortcuts {
         flex-wrap: wrap;
         gap: 12px;
+    }
+}
+
+/* Mobile Styles (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    /* Navigation */
+    .nav-menu {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .logo i {
+        font-size: 24px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 80px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    /* Features */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Buttons */
+    .btn-large {
+        padding: 14px 24px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: 25px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer-column h4 {
+        font-size: 1.1rem;
+    }
+    
+    /* Auth Forms */
+    .auth-card {
+        padding: 30px 20px;
+    }
+    
+    .auth-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Dashboard Stats */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px 15px;
+    }
+    
+    /* Templates */
+    .templates-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .template-card {
+        padding: 20px;
+    }
+    
+    /* Pricing */
+    .pricing-card {
+        padding: 30px 20px;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+    
+    /* Contact */
+    .contact-card,
+    .contact-info-card {
+        padding: 25px 20px;
+    }
+    
+    /* About */
+    .team-grid,
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-member {
+        padding: 25px 20px;
+    }
+    
+    /* CTA Section */
+    .cta-content {
+        padding: 50px 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
     }
 }
